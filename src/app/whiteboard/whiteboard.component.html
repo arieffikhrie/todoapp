@@ -1,0 +1,16 @@
+<div class="whiteboard">
+  <app-card *ngFor="let card of cards | async" cardName="{{card.title}}" [key]="card.$key" (remove)="removeCard(card.$key)"></app-card>
+  <div class="new-card">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Card Title" [(ngModel)]="newCardTitle">
+          </div>
+          <button class="btn btn-primary" (click)="addCard()">New Card</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

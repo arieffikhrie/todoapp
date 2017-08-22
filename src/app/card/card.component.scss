@@ -1,0 +1,24 @@
+.card {
+  width: 350px;
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: top;
+
+
+  .form-horizontal {
+    border-bottom: 1px solid transparent;
+    overflow: hidden;
+    height: 0;
+
+    transition: all 0.5s;
+    margin-bottom: -20px;
+  }
+  .card-form-show {
+    margin-bottom: 0;
+    height: 220px;
+    border-bottom-color: #e5e5e5;
+  }
+  .todo-list {
+    padding-top: 20px;
+  }
+}

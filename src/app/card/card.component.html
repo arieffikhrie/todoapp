@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title pull-left">{{cardName}}</div>
+      <div class="pull-right">
+        <button class="btn btn-success btn-sm" (click)="showForm = !showForm"><span class="glyphicon glyphicon-plus"></span></button>
+        <button class="btn btn-danger btn-sm" (click)="removeCard()"><span class="glyphicon glyphicon-remove"></span></button>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+      <form class="form-horizontal" [class.card-form-show]="showForm" [formGroup]="form" (ngSubmit)="addTodo(form)">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Description</label>
+          <div class="col-sm-9">
+            <textarea  formControlName="description" class="form-control" placeholder="Todo description"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Deadline</label>
+          <div class="col-sm-9">
+            <input dateTimePicker [value]="deadline | date: 'short'" [(ngModel)]="deadline" formControlName="deadline" type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Importance</label>
+          <div class="col-sm-9">
+            <select formControlName="importance" class="form-control">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12 text-right">
+            <button type="submit" class="btn btn-primary">Add Todo</button>
+          </div>
+        </div>
+      </form>
+      <div class="todo-list">
+        <app-todo *ngFor="let todo of todos" [cardKey]="key" [key]="todo.$key" (remove)="removeTodo(todo.$key)"></app-todo>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.box-todo {
+  position: relative;
+  padding: 15px 30px;
+  .todo-deadline {
+    font-family: monospace;
+    margin-bottom: 5px;
+  }
+  .todo-complete {
+    position: absolute;
+    left: 10px;
+  }
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}

@@ -1,0 +1,8 @@
+<div class="box-todo alert" [ngClass]="{'alert-success': todo.complete, 'alert-danger': !todo.complete && todo.importance=='high', 'alert-warning': !todo.complete && todo.importance=='medium', 'alert-info': !todo.complete && todo.importance=='low'}">
+<div class="todo-complete">
+  <input type="checkbox" [checked]="todo.complete" (change)="completeTodo($event)">
+</div>
+<div class="todo-deadline">{{todo.deadline | date: 'yMdjm'}}</div>
+<div class="todo-description">{{todo.description}}</div>
+<button type="button" class="close" aria-label="Close" (click)="removeTodo()"><span aria-hidden="true">&times;</span></button>
+</div>

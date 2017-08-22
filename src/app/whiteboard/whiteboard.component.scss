@@ -1,0 +1,19 @@
+.whiteboard {
+  height: 100%;
+  padding-top: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  white-space: nowrap;
+  overflow-x: auto;
+
+  .new-card {
+    width: 350px;
+    display: inline-block;
+    vertical-align: top;
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
